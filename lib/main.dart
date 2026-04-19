@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:e_wallet/bloc_obsever.dart';
+import 'package:e_wallet/core/utils/app_routing.dart';
 import 'package:e_wallet/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +19,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false);
+    return MaterialApp.router(
+      routerConfig: AppRouting.router,
+      debugShowCheckedModeBanner: false,
+    );
   }
 }
