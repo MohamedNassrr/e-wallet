@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "274031661742",
+    "project_id": "e-wallet-63210",
+    "storage_bucket": "e-wallet-63210.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:274031661742:android:acba522aeeff2407b8933f",
+        "android_client_info": {
+          "package_name": "com.example.e_wallet"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCb-rSRXRmDYTBflE_mc8xk1tx9Np0wtnE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
