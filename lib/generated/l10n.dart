@@ -53,8 +53,6 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
-<<<<<<< HEAD
-=======
 
   /// `Enter Your Phone number`
   String get enterPhoneNumber {
@@ -85,7 +83,6 @@ class S {
       args: [],
     );
   }
->>>>>>> features/auth
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
