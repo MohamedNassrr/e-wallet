@@ -21,5 +21,18 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
+<<<<<<< HEAD
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+=======
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "continueButton": MessageLookupByLibrary.simpleMessage("Continue"),
+    "enterOtp": MessageLookupByLibrary.simpleMessage(
+      "Enter 6-digit code sent via SMS",
+    ),
+    "enterPhoneNumber": MessageLookupByLibrary.simpleMessage(
+      "Enter Your Phone number",
+    ),
+    "nextButton": MessageLookupByLibrary.simpleMessage("Next"),
+  };
+>>>>>>> features/auth
 }

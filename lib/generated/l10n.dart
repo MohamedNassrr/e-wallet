@@ -53,6 +53,39 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+<<<<<<< HEAD
+=======
+
+  /// `Enter Your Phone number`
+  String get enterPhoneNumber {
+    return Intl.message(
+      'Enter Your Phone number',
+      name: 'enterPhoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue`
+  String get continueButton {
+    return Intl.message('Continue', name: 'continueButton', desc: '', args: []);
+  }
+
+  /// `Next`
+  String get nextButton {
+    return Intl.message('Next', name: 'nextButton', desc: '', args: []);
+  }
+
+  /// `Enter 6-digit code sent via SMS`
+  String get enterOtp {
+    return Intl.message(
+      'Enter 6-digit code sent via SMS',
+      name: 'enterOtp',
+      desc: '',
+      args: [],
+    );
+  }
+>>>>>>> features/auth
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

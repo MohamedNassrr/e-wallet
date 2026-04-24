@@ -1,1 +1,10 @@
+<<<<<<< HEAD
 {}
+=======
+{
+"enterPhoneNumber": "Enter Your Phone number",
+"continueButton": "Continue",
+"nextButton": "Next",
+"enterOtp": "Enter 6-digit code sent via SMS"
+}
+>>>>>>> features/auth
