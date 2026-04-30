@@ -1,5 +1,5 @@
 import 'package:e_wallet/core/themes/app_color.dart';
-import 'package:e_wallet/core/widgets/Custom_text_icon_button.dart';
+import 'package:e_wallet/core/widgets/custom_text_icon_button.dart';
 import 'package:e_wallet/features/auth/presentation/controller/auth_cubit/auth_cubit.dart';
 import 'package:e_wallet/features/auth/presentation/controller/auth_cubit/auth_state.dart';
 import 'package:e_wallet/generated/l10n.dart';

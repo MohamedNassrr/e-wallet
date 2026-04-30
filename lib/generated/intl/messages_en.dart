@@ -30,5 +30,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "Enter Your Phone number",
     ),
     "nextButton": MessageLookupByLibrary.simpleMessage("Next"),
+    "seeAll": MessageLookupByLibrary.simpleMessage("See All"),
+    "totalBalance": MessageLookupByLibrary.simpleMessage("Total Balance"),
+    "transaction": MessageLookupByLibrary.simpleMessage("Transaction"),
   };
 }

@@ -2,6 +2,7 @@ import 'package:e_wallet/core/utils/app_routing.dart';
 import 'package:e_wallet/features/auth/presentation/controller/auth_cubit/auth_cubit.dart';
 import 'package:e_wallet/features/auth/presentation/controller/auth_cubit/auth_state.dart';
 import 'package:e_wallet/features/auth/presentation/views/widgets/otp_row_icons.dart';
+import 'package:e_wallet/features/home/presentation/controller/wallet_cubit/wallet_cubit.dart';
 import 'package:e_wallet/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,9 +18,10 @@ class OtpViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = S.of(context);
     return BlocConsumer<AuthCubit, AuthStates>(
-      listener: (context, state) {
+      listener: (context, state) async {
         if (state is AuthSuccessStates) {
-          GoRouter.of(context).go(AppRouting.rHomeView);
+          await context.read<WalletCubit>().createWallet();
+          if (context.mounted) GoRouter.of(context).go(AppRouting.rHomeView);
         }
       },
       builder: (context, state) {
@@ -47,7 +49,7 @@ class OtpViewBody extends StatelessWidget {
                   borderColor: Colors.transparent,
                   focusedBorderColor: Colors.transparent,
                   disabledBorderColor: Colors.transparent,
-                  errorBorderColor: Colors.red, 
+                  errorBorderColor: Colors.red,
                   errorFillColor: Colors.grey[200],
                 ),
                 onCompleted: (code) {
