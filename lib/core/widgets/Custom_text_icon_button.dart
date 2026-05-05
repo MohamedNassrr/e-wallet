@@ -24,7 +24,7 @@ class CustomTextIconButton extends StatelessWidget {
   final Color? iconColor;
   final double height;
   final double width;
-  final Color? backgroundColor = AppColors.black;
+  final Color? backgroundColor = AppColors.mainColor;
   final bool isIconFirst;
   final Function() onPressed;
   final bool isLoading;

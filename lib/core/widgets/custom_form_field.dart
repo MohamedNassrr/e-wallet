@@ -6,15 +6,17 @@ class CustomFormField extends StatelessWidget {
     required this.controller,
     required this.inputType,
     this.validate,
-    required this.onSubmit,
+    this.onSubmit,
     required this.hintText,
+    required this.prefixIcon,
   });
 
   final TextEditingController controller;
   final TextInputType inputType;
   final FormFieldValidator<String>? validate;
-  final Function(String) onSubmit;
+  final Function(String)? onSubmit;
   final String hintText;
+  final IconData prefixIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +34,7 @@ class CustomFormField extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
           borderSide: const BorderSide(color: Colors.grey),
         ),
-        prefixIcon: Icon(Icons.phone_outlined, color: Colors.grey[600]),
+        prefixIcon: Icon(prefixIcon, color: Colors.grey[600]),
         hintText: hintText,
       ),
     );

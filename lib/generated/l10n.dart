@@ -94,14 +94,79 @@ class S {
     );
   }
 
-  /// `Transaction`
+  /// `Recent Transaction`
   String get transaction {
-    return Intl.message('Transaction', name: 'transaction', desc: '', args: []);
+    return Intl.message(
+      'Recent Transaction',
+      name: 'transaction',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `See All`
   String get seeAll {
     return Intl.message('See All', name: 'seeAll', desc: '', args: []);
+  }
+
+  /// `CARD HOLDER`
+  String get cardHolder {
+    return Intl.message('CARD HOLDER', name: 'cardHolder', desc: '', args: []);
+  }
+
+  /// `EXPIRES`
+  String get expires {
+    return Intl.message('EXPIRES', name: 'expires', desc: '', args: []);
+  }
+
+  /// `Transfer`
+  String get transfer {
+    return Intl.message('Transfer', name: 'transfer', desc: '', args: []);
+  }
+
+  /// `Deposit`
+  String get deposit {
+    return Intl.message('Deposit', name: 'deposit', desc: '', args: []);
+  }
+
+  /// `Send to`
+  String get sendTo {
+    return Intl.message('Send to', name: 'sendTo', desc: '', args: []);
+  }
+
+  /// `amount`
+  String get amount {
+    return Intl.message('amount', name: 'amount', desc: '', args: []);
+  }
+
+  /// `phone number can not be empty!`
+  String get phoneValidation {
+    return Intl.message(
+      'phone number can not be empty!',
+      name: 'phoneValidation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `phone number is wrong`
+  String get phoneLengthValidation {
+    return Intl.message(
+      'phone number is wrong',
+      name: 'phoneLengthValidation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid amount`
+  String get amountValidation {
+    return Intl.message(
+      'Invalid amount',
+      name: 'amountValidation',
+      desc: '',
+      args: [],
+    );
   }
 }
 

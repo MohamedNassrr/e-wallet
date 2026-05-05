@@ -22,16 +22,29 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "amount": MessageLookupByLibrary.simpleMessage("amount"),
+    "amountValidation": MessageLookupByLibrary.simpleMessage("Invalid amount"),
+    "cardHolder": MessageLookupByLibrary.simpleMessage("CARD HOLDER"),
     "continueButton": MessageLookupByLibrary.simpleMessage("Continue"),
+    "deposit": MessageLookupByLibrary.simpleMessage("Deposit"),
     "enterOtp": MessageLookupByLibrary.simpleMessage(
       "Enter 6-digit code sent via SMS",
     ),
     "enterPhoneNumber": MessageLookupByLibrary.simpleMessage(
       "Enter Your Phone number",
     ),
+    "expires": MessageLookupByLibrary.simpleMessage("EXPIRES"),
     "nextButton": MessageLookupByLibrary.simpleMessage("Next"),
+    "phoneLengthValidation": MessageLookupByLibrary.simpleMessage(
+      "phone number is wrong",
+    ),
+    "phoneValidation": MessageLookupByLibrary.simpleMessage(
+      "phone number can not be empty!",
+    ),
     "seeAll": MessageLookupByLibrary.simpleMessage("See All"),
+    "sendTo": MessageLookupByLibrary.simpleMessage("Send to"),
     "totalBalance": MessageLookupByLibrary.simpleMessage("Total Balance"),
-    "transaction": MessageLookupByLibrary.simpleMessage("Transaction"),
+    "transaction": MessageLookupByLibrary.simpleMessage("Recent Transaction"),
+    "transfer": MessageLookupByLibrary.simpleMessage("Transfer"),
   };
 }

@@ -39,4 +39,10 @@ class WalletCubit extends Cubit<WalletStates> {
       },
     );
   }
+
+  @override
+  Future<void> close() {
+    _walletSub?.cancel();
+    return super.close();
+  }
 }

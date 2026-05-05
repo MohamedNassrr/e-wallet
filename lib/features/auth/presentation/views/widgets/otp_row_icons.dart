@@ -30,7 +30,7 @@ class OtpRowIcons extends StatelessWidget {
           width: 45,
           decoration: const BoxDecoration(
             shape: BoxShape.circle,
-            color: AppColors.black,
+            color: AppColors.mainColor,
           ),
           child: IconButton(
             onPressed: () {

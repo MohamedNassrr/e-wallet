@@ -4,6 +4,16 @@
     "nextButton": "Next",
     "enterOtp": "Enter 6-digit code sent via SMS",
     "totalBalance":"Total Balance",
-    "transaction":"Transaction",
-    "seeAll":"See All"
+    "transaction":"Recent Transaction",
+    "seeAll":"See All",
+    "cardHolder": "CARD HOLDER",
+    "expires": "EXPIRES",
+    "transfer": "Transfer",
+    "deposit": "Deposit",
+    "sendTo":"Send to",
+    "amount":"amount",
+    "phoneValidation":"phone number can not be empty!",
+    "phoneLengthValidation":"phone number is wrong",
+    "amountValidation":"Invalid amount"
+    
 }

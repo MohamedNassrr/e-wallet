@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomTextTheme {
-  static TextTheme lightTextTheme= TextTheme(
+  static TextTheme lightTextTheme = TextTheme(
     // Headings - Extra Bold
     displayLarge: TextStyle(
       fontSize: 32.sp,
@@ -58,7 +58,7 @@ class CustomTextTheme {
       fontSize: 14.sp,
       fontWeight: FontWeight.w500,
       height: 1.5,
-      color: AppColors.black,
+      color: AppColors.mainColor,
     ),
     labelSmall: TextStyle(
       fontSize: 12.sp,

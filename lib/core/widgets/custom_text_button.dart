@@ -20,7 +20,7 @@ class CustomTextButton extends StatelessWidget {
       width: double.infinity,
       height: 45.h,
       decoration: const BoxDecoration(
-        color: AppColors.black,
+        color: AppColors.mainColor,
         borderRadius: BorderRadius.all(Radius.circular(63)),
       ),
       child: TextButton(

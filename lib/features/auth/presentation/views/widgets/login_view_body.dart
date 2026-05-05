@@ -65,7 +65,16 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                         style: Theme.of(context).textTheme.bodySmall,
                       ),
                       CustomFormField(
+                        prefixIcon: Icons.phone_outlined,
                         controller: phoneController,
+                        validate: (value) {
+                          if (value!.isEmpty) {
+                            return l10n.phoneValidation;
+                          }
+                          if (value.length > 11 || value.length < 11) {
+                            return l10n.phoneLengthValidation;
+                          }
+                        },
                         inputType: TextInputType.phone,
                         onSubmit: (_) {
                           if (formKey.currentState!.validate()) {
