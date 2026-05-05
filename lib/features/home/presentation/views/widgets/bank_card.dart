@@ -33,7 +33,7 @@ class BankCard extends StatelessWidget {
           ),
         ),
         Text(
-          '\$${balance.toStringAsFixed(2)}',
+          'EGP${balance.toStringAsFixed(2)}',
           style: const TextStyle(
             color: Color(0xFF1A1A2E),
             fontSize: 32,

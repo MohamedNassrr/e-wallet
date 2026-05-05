@@ -23,8 +23,8 @@ class WalletCubit extends Cubit<WalletStates> {
   }
 
   StreamSubscription? _walletSub;
-  Future<void> fetchWallet() async {
-    emit(FetchWalletLoadingStates());
+  Future<void> fetchWallet({bool isRefresh = false}) async {
+    if (!isRefresh) emit(FetchWalletLoadingStates());
 
     _walletSub?.cancel();
 

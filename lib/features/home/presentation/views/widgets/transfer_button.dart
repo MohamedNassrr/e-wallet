@@ -1,6 +1,6 @@
 import 'package:e_wallet/core/services/service_locator.dart';
 import 'package:e_wallet/core/widgets/custom_form_field.dart';
-import 'package:e_wallet/features/home/data/repos/transaction_repo.dart';
+import 'package:e_wallet/features/home/data/repos/transaction_repo/transaction_repo_impl.dart';
 import 'package:e_wallet/features/home/presentation/controller/transfer_cubit/transfer_cubit.dart';
 import 'package:e_wallet/features/home/presentation/controller/transfer_cubit/transfer_state.dart';
 import 'package:e_wallet/features/home/presentation/views/widgets/transaction_bottom_sheet.dart';
@@ -42,7 +42,7 @@ class _TransferButtonState extends State<TransferButton> {
             barrierColor: Colors.black.withValues(alpha: 0.5),
             builder: (context) => BlocProvider(
               create: (context) =>
-                  TransactionCubit(getIt.get<TransactionRepo>()),
+                  TransactionCubit(getIt.get<TransactionRepoImpl>()),
               child: BlocConsumer<TransactionCubit, TransactionStates>(
                 listener: (context, state) {
                   if (state is TransferFailureStates) {

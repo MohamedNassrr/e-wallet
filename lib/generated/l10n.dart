@@ -168,6 +168,26 @@ class S {
       args: [],
     );
   }
+
+  /// `No transactions yet`
+  String get noTransactionsYet {
+    return Intl.message(
+      'No transactions yet',
+      name: 'noTransactionsYet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Transactions`
+  String get transactions {
+    return Intl.message(
+      'Transactions',
+      name: 'transactions',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

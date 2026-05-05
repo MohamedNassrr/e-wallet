@@ -2,8 +2,11 @@ import 'package:e_wallet/core/services/service_locator.dart';
 import 'package:e_wallet/features/auth/presentation/controller/auth_cubit/auth_cubit.dart';
 import 'package:e_wallet/features/auth/presentation/views/login_view.dart';
 import 'package:e_wallet/features/auth/presentation/views/otp_view.dart';
+import 'package:e_wallet/features/home/data/repos/ledger_repo/ledger_repo_impl.dart';
 import 'package:e_wallet/features/home/data/repos/wallet_repo.dart';
+import 'package:e_wallet/features/home/presentation/controller/ledger_cubit/ledger_cubit.dart';
 import 'package:e_wallet/features/home/presentation/controller/wallet_cubit/wallet_cubit.dart';
+import 'package:e_wallet/features/home/presentation/views/history_view.dart';
 import 'package:e_wallet/features/home/presentation/views/home_view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,6 +16,7 @@ abstract class AppRouting {
   static const rLoginView = '/';
   static const rOtpView = '/OtpView';
   static const rHomeView = '/HomeView';
+  static const rHistoryView = '/HistoryView';
 
   static final router = GoRouter(
     initialLocation: initialLocation(),
@@ -34,12 +38,24 @@ abstract class AppRouting {
         path: rHomeView,
         builder: (context, state) => MultiBlocProvider(
           providers: [
-           
             BlocProvider(
-              create: (context) => WalletCubit(getIt.get<WalletRepo>())..fetchWallet(),
+              create: (context) =>
+                  WalletCubit(getIt.get<WalletRepo>())..fetchWallet(),
+            ),
+            BlocProvider(
+              create: (context) =>
+                  LedgerCubit(getIt.get<LedgerRepoImpl>())..fetchLedger(),
             ),
           ],
           child: const HomeView(),
+        ),
+      ),
+
+      GoRoute(
+        path: rHistoryView,
+        builder: (context, state) => BlocProvider(
+          create: (context) => LedgerCubit(getIt.get<LedgerRepoImpl>())..fetchLedger(),
+          child:const HistoryView(),
         ),
       ),
     ],

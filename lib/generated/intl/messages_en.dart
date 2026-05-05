@@ -35,6 +35,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "expires": MessageLookupByLibrary.simpleMessage("EXPIRES"),
     "nextButton": MessageLookupByLibrary.simpleMessage("Next"),
+    "noTransactionsYet": MessageLookupByLibrary.simpleMessage(
+      "No transactions yet",
+    ),
     "phoneLengthValidation": MessageLookupByLibrary.simpleMessage(
       "phone number is wrong",
     ),
@@ -45,6 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "sendTo": MessageLookupByLibrary.simpleMessage("Send to"),
     "totalBalance": MessageLookupByLibrary.simpleMessage("Total Balance"),
     "transaction": MessageLookupByLibrary.simpleMessage("Recent Transaction"),
+    "transactions": MessageLookupByLibrary.simpleMessage("Transactions"),
     "transfer": MessageLookupByLibrary.simpleMessage("Transfer"),
   };
 }
