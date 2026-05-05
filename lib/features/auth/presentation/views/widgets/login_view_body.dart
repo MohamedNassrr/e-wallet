@@ -71,9 +71,10 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                           if (value!.isEmpty) {
                             return l10n.phoneValidation;
                           }
-                          if (value.length > 11 || value.length < 11) {
+                          if (value.length != 11) {
                             return l10n.phoneLengthValidation;
                           }
+                          return null;
                         },
                         inputType: TextInputType.phone,
                         onSubmit: (_) {
