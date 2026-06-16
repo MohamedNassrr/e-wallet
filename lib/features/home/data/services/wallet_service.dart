@@ -9,16 +9,21 @@ class WalletService {
 
   Future<void> createWallet() async {
     try {
-      WalletModel walletModel = WalletModel(
-        userId: _auth.currentUser!.uid,
-        balance: 0,
-        createdAt: FieldValue.serverTimestamp(),
-        currency: "EGP",
-      );
-      await _firestore
+      final walletRef = _firestore
           .collection('wallets')
-          .doc(_auth.currentUser!.uid)
-          .set(walletModel.toMap());
+          .doc(_auth.currentUser!.uid);
+
+      final walletDoc = await walletRef.get();
+
+      if (!walletDoc.exists) {
+        WalletModel walletModel = WalletModel(
+          userId: _auth.currentUser!.uid,
+          balance: 0,
+          createdAt: FieldValue.serverTimestamp(),
+          currency: "EGP",
+        );
+        await walletRef.set(walletModel.toMap());
+      }
     } on FirebaseException catch (e) {
       throw FirebaseFirestoreFailure.fromCode(e);
     } catch (e) {
@@ -26,8 +31,8 @@ class WalletService {
     }
   }
 
-  Stream<WalletModel> getWalletStream()  {
-    return  FirebaseFirestore.instance
+  Stream<WalletModel> getWalletStream() {
+    return FirebaseFirestore.instance
         .collection('wallets')
         .doc(_auth.currentUser!.uid)
         .snapshots()

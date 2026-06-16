@@ -1,3 +1,5 @@
+import 'package:e_wallet/core/themes/app_color.dart';
+import 'package:e_wallet/core/widgets/custom_icon_button.dart';
 import 'package:e_wallet/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
@@ -23,23 +25,43 @@ class BankCard extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          l10n.totalBalance,
-          style: const TextStyle(
-            color: Color(0xFF9E9E9E),
-            fontSize: 13,
-            fontWeight: FontWeight.w500,
-            letterSpacing: 0.4,
-          ),
-        ),
-        Text(
-          'EGP${balance.toStringAsFixed(2)}',
-          style: const TextStyle(
-            color: Color(0xFF1A1A2E),
-            fontSize: 32,
-            fontWeight: FontWeight.w800,
-            letterSpacing: -0.5,
-          ),
+        Row(
+          children: [
+            Column(
+              crossAxisAlignment: .start,
+              children: [
+                Text(
+                  l10n.totalBalance,
+                  style: const TextStyle(
+                    color: Color(0xFF9E9E9E),
+                    fontSize: 13,
+                    fontWeight: FontWeight.w500,
+                    letterSpacing: 0.4,
+                  ),
+                ),
+                Text(
+                  'EGP${balance.toStringAsFixed(2)}',
+                  style: const TextStyle(
+                    color: Color(0xFF1A1A2E),
+                    fontSize: 32,
+                    fontWeight: FontWeight.w800,
+                    letterSpacing: -0.5,
+                  ),
+                ),
+              ],
+            ),
+            const Spacer(),
+            CustomIconButton(
+              backGroundColor: AppColors.grey400,
+              onPressed: () {},
+              icon: Icons.notifications_none_rounded,
+            ),
+            CustomIconButton(
+              backGroundColor: AppColors.grey400,
+              onPressed: () {},
+              icon: Icons.settings,
+            ),
+          ],
         ),
 
         const SizedBox(height: 15),

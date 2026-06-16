@@ -8,19 +8,25 @@ class CustomIconButton extends StatelessWidget {
     required this.backGroundColor,
     required this.onPressed,
     required this.icon,
+    this.iconColor = Colors.white,
   });
 
   final double height;
   final Color backGroundColor;
   final Function() onPressed;
   final IconData icon;
+  final Color? iconColor;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: height.h,
       decoration: BoxDecoration(shape: .circle, color: backGroundColor),
-      child: IconButton(onPressed: onPressed, icon: Icon(icon)),
+      child: IconButton(
+        onPressed: onPressed,
+        icon: Icon(icon),
+        color: iconColor,
+      ),
     );
   }
 }

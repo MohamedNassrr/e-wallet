@@ -26,7 +26,7 @@ class RecentTransactionListBody extends StatelessWidget {
               crossAxisAlignment: .start,
               children: [
                 Text(
-                  ledgerModel.receiverPhone,
+                  ledgerModel.receiverPhone ?? 'ME',
                   style: Theme.of(context).textTheme.bodyMedium,
                 ),
                 Text(
@@ -41,8 +41,8 @@ class RecentTransactionListBody extends StatelessWidget {
               'EGP ${ledgerModel.amount}',
               style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                 color: ledgerModel.transactionType == TransactionType.transfer
-                    ? Colors.green
-                    : Colors.red,
+                    ? Colors.red
+                    : Colors.green,
               ),
             ),
           ],

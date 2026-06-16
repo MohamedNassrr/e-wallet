@@ -9,7 +9,7 @@ class TransactionsButtonRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Row(
       spacing: 10,
-      children: [TransferButton(), DepositButton()]
+      children: [TransferButton(), DepositButton()],
     );
   }
 }

@@ -3,23 +3,23 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class LedgerModel {
   final TransactionType transactionType;
   final String from;
-  final String to;
-  final String receiverPhone;
+  final String? to;
+  final String? receiverPhone;
   final double amount;
   final String status;
   final String transactionId;
-  final String idempotencyKey;
+  final String? idempotencyKey;
   final DateTime? timestamp;
 
   LedgerModel({
     required this.from,
-    required this.to,
+    this.to,
     required this.amount,
     required this.status,
     required this.transactionId,
-    required this.idempotencyKey,
+   this.idempotencyKey,
     this.timestamp,
-    required this.receiverPhone,
+    this.receiverPhone,
     required this.transactionType,
   });
 

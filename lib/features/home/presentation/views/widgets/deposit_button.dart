@@ -1,8 +1,11 @@
 import 'package:e_wallet/core/widgets/custom_form_field.dart';
+import 'package:e_wallet/features/home/presentation/controller/deposit_cubit/deposit_cubit.dart';
+import 'package:e_wallet/features/home/presentation/controller/deposit_cubit/deposit_state.dart';
 import 'package:e_wallet/features/home/presentation/views/widgets/transaction_bottom_sheet.dart';
 import 'package:e_wallet/features/home/presentation/views/widgets/transactions_button.dart';
 import 'package:e_wallet/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class DepositButton extends StatefulWidget {
   const DepositButton({super.key});
@@ -25,21 +28,33 @@ class _DepositButtonState extends State<DepositButton> {
     return Expanded(
       child: TransactionsButton(
         onTap: () {
+          var depositCubit = context.read<DepositCubit>();
           showModalBottomSheet(
             context: context,
             showDragHandle: true,
             isScrollControlled: true,
             barrierColor: Colors.black.withValues(alpha: 0.5),
-            builder: (context) => TransactionBottomSheet(
-              primaryField: CustomFormField(
-                controller: depositAmountController,
-                inputType: TextInputType.number,
-                hintText: l10n.amount,
-                prefixIcon: Icons.payments_outlined,
+            builder: (context) => BlocProvider.value(
+              value: depositCubit,
+              child: BlocBuilder<DepositCubit, DepositState>(
+                builder: (context, state) {
+                  return TransactionBottomSheet(
+                    primaryField: CustomFormField(
+                      controller: depositAmountController,
+                      inputType: TextInputType.number,
+                      hintText: l10n.amount,
+                      prefixIcon: Icons.payments_outlined,
+                    ),
+                    buttonText: l10n.continueButton,
+                    onTap: () {
+                      depositCubit.deposit(
+                        amount: double.parse(depositAmountController.text.trim()),
+                      );
+                    },
+                    isLoading: false,
+                  );
+                },
               ),
-              buttonText: l10n.continueButton,
-              onTap: () {},
-              isLoading: null,
             ),
           );
         },

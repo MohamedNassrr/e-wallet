@@ -9,14 +9,14 @@ class TransactionBottomSheet extends StatelessWidget {
     this.secondaryField,
     required this.buttonText,
     required this.onTap,
-    this.isLoading,
+    this.isLoading = false,
   });
 
   final Widget primaryField;
   final Widget? secondaryField;
   final String buttonText;
   final Function() onTap;
-  final bool? isLoading;
+  final bool isLoading;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -44,7 +44,7 @@ class TransactionBottomSheet extends StatelessWidget {
                 if (secondaryField != null) ...[secondaryField!],
 
                 CustomTextButton(
-                  isLoading: isLoading!,
+                  isLoading: isLoading,
                   title: buttonText,
                   onPressed: onTap,
                 ),

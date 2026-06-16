@@ -1,6 +1,4 @@
-import 'package:e_wallet/core/services/service_locator.dart';
 import 'package:e_wallet/core/widgets/custom_form_field.dart';
-import 'package:e_wallet/features/home/data/repos/transaction_repo/transaction_repo_impl.dart';
 import 'package:e_wallet/features/home/presentation/controller/transfer_cubit/transfer_cubit.dart';
 import 'package:e_wallet/features/home/presentation/controller/transfer_cubit/transfer_state.dart';
 import 'package:e_wallet/features/home/presentation/views/widgets/transaction_bottom_sheet.dart';
@@ -35,14 +33,15 @@ class _TransferButtonState extends State<TransferButton> {
     return Expanded(
       child: TransactionsButton(
         onTap: () {
+          final transferCubit = context.read<TransactionCubit>();
+
           showModalBottomSheet(
             context: context,
             showDragHandle: true,
             isScrollControlled: true,
             barrierColor: Colors.black.withValues(alpha: 0.5),
-            builder: (context) => BlocProvider(
-              create: (context) =>
-                  TransactionCubit(getIt.get<TransactionRepoImpl>()),
+            builder: (context) => BlocProvider.value(
+              value: transferCubit,
               child: BlocConsumer<TransactionCubit, TransactionStates>(
                 listener: (context, state) {
                   if (state is TransferFailureStates) {
@@ -54,7 +53,6 @@ class _TransferButtonState extends State<TransferButton> {
                   }
                 },
                 builder: (context, state) {
-                  var transferCubit = context.read<TransactionCubit>();
                   return Form(
                     key: formKey,
                     child: TransactionBottomSheet(
@@ -85,7 +83,7 @@ class _TransferButtonState extends State<TransferButton> {
                           final amount = double.tryParse(value);
 
                           if (amount == null) {
-                            return 'Enter valid amount';
+                            return l10n.amountValidation;
                           }
 
                           if (amount <= 0) {

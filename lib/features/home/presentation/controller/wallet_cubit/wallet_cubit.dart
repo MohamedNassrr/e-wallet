@@ -34,8 +34,9 @@ class WalletCubit extends Cubit<WalletStates> {
         emit(FetchWalletSuccessStates(wallet));
       },
       onError: (error) {
+        log('fetch wallet failure ${error.toString()}');
         if (isClosed) return;
-        emit(FetchWalletFailureStates(error.toString()));
+        emit(FetchWalletFailureStates(error));
       },
     );
   }

@@ -10,7 +10,7 @@ class WalletRepo {
     await _service.createWallet();
   }
 
-  Stream<WalletModel> fetchWallet()  {
-    return  _service.getWalletStream();
+  Stream<WalletModel> fetchWallet() {
+    return _service.getWalletStream();
   }
 }

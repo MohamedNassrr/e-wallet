@@ -5,12 +5,8 @@ class AppTheme {
   static ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
     textTheme: CustomTextTheme.lightTextTheme,
-  scaffoldBackgroundColor: const Color(0xffF3F3F3)
+    scaffoldBackgroundColor: const Color(0xffF3F3F3),
+    appBarTheme: const AppBarTheme(backgroundColor: Color(0xffF3F3F3)),
   );
-  static ThemeData darkTheme = ThemeData(
-    brightness: Brightness.dark,
-   
-
-   
-  );
+  static ThemeData darkTheme = ThemeData(brightness: Brightness.dark);
 }

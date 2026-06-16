@@ -1,5 +1,3 @@
-
-
 class WalletModel {
   String? userId;
   double? balance;

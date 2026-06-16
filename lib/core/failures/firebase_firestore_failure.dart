@@ -43,9 +43,7 @@ class FirebaseFirestoreFailure {
         );
 
       case 'deadline-exceeded':
-        return FirebaseFirestoreFailure(
-          message: 'The operation timed out.',
-        );
+        return FirebaseFirestoreFailure(message: 'The operation timed out.');
 
       case 'cancelled':
         return FirebaseFirestoreFailure(
@@ -53,14 +51,10 @@ class FirebaseFirestoreFailure {
         );
 
       case 'data-loss':
-        return FirebaseFirestoreFailure(
-          message: 'Data loss occurred.',
-        );
+        return FirebaseFirestoreFailure(message: 'Data loss occurred.');
 
       case 'invalid-argument':
-        return FirebaseFirestoreFailure(
-          message: 'Invalid data was provided.',
-        );
+        return FirebaseFirestoreFailure(message: 'Invalid data was provided.');
 
       default:
         return FirebaseFirestoreFailure(

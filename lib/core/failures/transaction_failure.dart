@@ -2,15 +2,11 @@ class TransactionFailure implements Exception {
   final String message;
   final String code;
 
-  const TransactionFailure({
-    required this.message,
-    required this.code,
-  });
+  const TransactionFailure({required this.message, required this.code});
 
   @override
   String toString() => 'TransactionFailure($code: $message)';
 
-  
   factory TransactionFailure.insufficientBalance() {
     return const TransactionFailure(
       code: 'insufficient_balance',

@@ -5,6 +5,7 @@ sealed class LedgerState {}
 final class LedgerInitialState extends LedgerState {}
 
 final class LedgerLoadingState extends LedgerState {}
+
 final class LedgerEmptyState extends LedgerState {}
 
 final class LedgerSuccessState extends LedgerState {
