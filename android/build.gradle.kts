@@ -2,6 +2,15 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        maven {
+           url = uri("https://paymob.jfrog.io/artifactory/android-sdk")
+        }
+        maven {
+            url = uri("https://jitpack.io")
+        }
+        maven {
+            url = rootProject.projectDir.toURI().resolve("libs")
+        }
     }
 }
 
