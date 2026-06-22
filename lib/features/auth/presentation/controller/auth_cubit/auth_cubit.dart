@@ -3,12 +3,13 @@ import 'dart:developer';
 import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:e_wallet/core/failures/firebase_auth_failure.dart';
+import 'package:e_wallet/core/services/biometric_service.dart';
 import 'package:e_wallet/features/auth/data/models/user_model.dart';
 import 'package:e_wallet/features/auth/presentation/controller/auth_cubit/auth_state.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthCubit extends Cubit<AuthStates> {
-  AuthCubit() : super(AuthInitialStates());
+  AuthCubit(this.biometricService) : super(AuthInitialStates());
 
   final _auth = FirebaseAuth.instance;
   String verificationId = '';
@@ -82,6 +83,22 @@ class AuthCubit extends Cubit<AuthStates> {
 
     if (!(await userRef.get()).exists) {
       await userRef.set(userModel.toMap(), SetOptions(merge: true));
+    }
+  }
+
+  final BiometricService biometricService;
+
+  Future<void> biometricAuth() async {
+    emit(LockLoadingStates());
+    final result = await biometricService.biometricAuth();
+
+    log('biometric result: $result');
+    log('biometric result type: ${result.runtimeType}');
+
+    if (result == true) {
+      emit(LockUnlockedStates());
+    } else {
+      emit(LockFailureStates('Authentication failed'));
     }
   }
 }

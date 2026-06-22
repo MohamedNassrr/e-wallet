@@ -189,6 +189,26 @@ class S {
     );
   }
 
+  /// `Send, receive, and manage your money — all in one place.`
+  String get featureForward {
+    return Intl.message(
+      'Send, receive, and manage your money — all in one place.',
+      name: 'featureForward',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Authentication failed. Please try again.`
+  String get biometricFailed {
+    return Intl.message(
+      'Authentication failed. Please try again.',
+      name: 'biometricFailed',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Transactions`
   String get transactions {
     return Intl.message(

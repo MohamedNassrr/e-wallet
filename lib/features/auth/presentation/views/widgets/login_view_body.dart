@@ -1,4 +1,6 @@
+import 'package:e_wallet/core/themes/app_color.dart';
 import 'package:e_wallet/core/utils/app_routing.dart';
+import 'package:e_wallet/core/utils/assets_data.dart';
 import 'package:e_wallet/core/widgets/custom_form_field.dart';
 import 'package:e_wallet/core/widgets/custom_text_button.dart';
 import 'package:e_wallet/features/auth/presentation/controller/auth_cubit/auth_cubit.dart';
@@ -43,14 +45,41 @@ class _LoginViewBodyState extends State<LoginViewBody> {
           child: Column(
             mainAxisAlignment: .end,
             children: [
-              Expanded(child: Container(color: Colors.white)),
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Expanded(
+                      child: Image.asset(
+                        AssetsData.loginCard,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 32.w),
+                      child: Text(
+                        l10n.featureForward,
+                        textAlign: TextAlign.center,
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                          color: AppColors.grey300,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 15.sp,
+                          height: 1.5,
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 24.h),
+                  ],
+                ),
+              ),
               Container(
                 height: 250.h,
                 decoration: const BoxDecoration(
-                  color: Colors.grey,
+                  color: AppColors.white,
                   borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20),
-                    topRight: Radius.circular(20),
+                    topLeft: Radius.circular(30),
+                    topRight: Radius.circular(30),
                   ),
                 ),
                 child: Padding(
@@ -62,7 +91,9 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                     children: [
                       Text(
                         l10n.enterPhoneNumber,
-                        style: Theme.of(context).textTheme.bodySmall,
+                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                          color: AppColors.grey400,
+                        ),
                       ),
                       CustomFormField(
                         prefixIcon: Icons.phone_outlined,
@@ -87,6 +118,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                         hintText: '01XX XXX XXXX',
                       ),
                       CustomTextButton(
+                        isLoading: State is AuthLoadingStates ? true : false,
                         title: l10n.continueButton,
                         onPressed: () {
                           if (formKey.currentState!.validate()) {

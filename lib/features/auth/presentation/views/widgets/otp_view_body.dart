@@ -21,7 +21,27 @@ class OtpViewBody extends StatelessWidget {
       listener: (context, state) async {
         if (state is AuthSuccessStates) {
           await context.read<WalletCubit>().createWallet();
-          if (context.mounted) GoRouter.of(context).go(AppRouting.rHomeView);
+          if (context.mounted) {
+            context.read<AuthCubit>().biometricAuth();
+          }
+        }
+
+        if (state is LockUnlockedStates) {
+           if (!context.mounted) return;
+          GoRouter.of(context).go(AppRouting.rHomeView);
+        }
+
+        if (state is LockFailureStates) {
+          if (!context.mounted) return;
+          ScaffoldMessenger.of(
+            context,
+          ).showSnackBar(SnackBar(content: Text(l10n.biometricFailed)));
+        }
+        if (state is LockFailureStates) {
+          if (!context.mounted) return;
+          ScaffoldMessenger.of(
+            context,
+          ).showSnackBar(SnackBar(content: Text(l10n.biometricFailed)));
         }
       },
       builder: (context, state) {

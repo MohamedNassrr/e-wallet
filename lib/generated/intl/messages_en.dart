@@ -24,6 +24,9 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "amount": MessageLookupByLibrary.simpleMessage("amount"),
     "amountValidation": MessageLookupByLibrary.simpleMessage("Invalid amount"),
+    "biometricFailed": MessageLookupByLibrary.simpleMessage(
+      "Authentication failed. Please try again.",
+    ),
     "cardHolder": MessageLookupByLibrary.simpleMessage("CARD HOLDER"),
     "continueButton": MessageLookupByLibrary.simpleMessage("Continue"),
     "deposit": MessageLookupByLibrary.simpleMessage("Deposit"),
@@ -34,6 +37,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Enter Your Phone number",
     ),
     "expires": MessageLookupByLibrary.simpleMessage("EXPIRES"),
+    "featureForward": MessageLookupByLibrary.simpleMessage(
+      "Send, receive, and manage your money — all in one place.",
+    ),
     "goodMorning": MessageLookupByLibrary.simpleMessage("Good Morning!"),
     "nextButton": MessageLookupByLibrary.simpleMessage("Next"),
     "noTransactionsYet": MessageLookupByLibrary.simpleMessage(
