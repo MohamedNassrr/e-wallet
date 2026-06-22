@@ -1,6 +1,6 @@
 import 'package:e_wallet/core/widgets/custom_form_field.dart';
-import 'package:e_wallet/features/home/presentation/controller/deposit_cubit/deposit_cubit.dart';
-import 'package:e_wallet/features/home/presentation/controller/deposit_cubit/deposit_state.dart';
+import 'package:e_wallet/features/home/presentation/controller/transaction_cubit/transaction_cubit.dart';
+import 'package:e_wallet/features/home/presentation/controller/transaction_cubit/transaction_state.dart';
 import 'package:e_wallet/features/home/presentation/views/widgets/transaction_bottom_sheet.dart';
 import 'package:e_wallet/features/home/presentation/views/widgets/transactions_button.dart';
 import 'package:e_wallet/generated/l10n.dart';
@@ -28,7 +28,7 @@ class _DepositButtonState extends State<DepositButton> {
     return Expanded(
       child: TransactionsButton(
         onTap: () {
-          var depositCubit = context.read<DepositCubit>();
+          var depositCubit = context.read<TransactionCubit>();
           showModalBottomSheet(
             context: context,
             showDragHandle: true,
@@ -36,7 +36,7 @@ class _DepositButtonState extends State<DepositButton> {
             barrierColor: Colors.black.withValues(alpha: 0.5),
             builder: (context) => BlocProvider.value(
               value: depositCubit,
-              child: BlocBuilder<DepositCubit, DepositState>(
+              child: BlocBuilder<TransactionCubit, TransactionStates>(
                 builder: (context, state) {
                   return TransactionBottomSheet(
                     primaryField: CustomFormField(
@@ -48,7 +48,9 @@ class _DepositButtonState extends State<DepositButton> {
                     buttonText: l10n.continueButton,
                     onTap: () {
                       depositCubit.deposit(
-                        amount: double.parse(depositAmountController.text.trim()),
+                        amount: double.parse(
+                          depositAmountController.text.trim(),
+                        ),
                       );
                     },
                     isLoading: false,

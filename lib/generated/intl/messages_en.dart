@@ -34,6 +34,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Enter Your Phone number",
     ),
     "expires": MessageLookupByLibrary.simpleMessage("EXPIRES"),
+    "goodMorning": MessageLookupByLibrary.simpleMessage("Good Morning!"),
     "nextButton": MessageLookupByLibrary.simpleMessage("Next"),
     "noTransactionsYet": MessageLookupByLibrary.simpleMessage(
       "No transactions yet",

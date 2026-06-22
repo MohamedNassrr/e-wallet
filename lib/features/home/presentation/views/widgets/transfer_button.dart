@@ -1,6 +1,6 @@
 import 'package:e_wallet/core/widgets/custom_form_field.dart';
-import 'package:e_wallet/features/home/presentation/controller/transfer_cubit/transfer_cubit.dart';
-import 'package:e_wallet/features/home/presentation/controller/transfer_cubit/transfer_state.dart';
+import 'package:e_wallet/features/home/presentation/controller/transaction_cubit/transaction_cubit.dart';
+import 'package:e_wallet/features/home/presentation/controller/transaction_cubit/transaction_state.dart';
 import 'package:e_wallet/features/home/presentation/views/widgets/transaction_bottom_sheet.dart';
 import 'package:e_wallet/features/home/presentation/views/widgets/transactions_button.dart';
 import 'package:e_wallet/generated/l10n.dart';

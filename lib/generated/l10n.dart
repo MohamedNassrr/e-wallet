@@ -84,11 +84,11 @@ class S {
     );
   }
 
-  /// `Total Balance`
-  String get totalBalance {
+  /// `Good Morning!`
+  String get goodMorning {
     return Intl.message(
-      'Total Balance',
-      name: 'totalBalance',
+      'Good Morning!',
+      name: 'goodMorning',
       desc: '',
       args: [],
     );
@@ -127,6 +127,16 @@ class S {
   /// `Deposit`
   String get deposit {
     return Intl.message('Deposit', name: 'deposit', desc: '', args: []);
+  }
+
+  /// `Total Balance`
+  String get totalBalance {
+    return Intl.message(
+      'Total Balance',
+      name: 'totalBalance',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Send to`

@@ -46,10 +46,7 @@ class HomeViewBody extends StatelessWidget {
                   spacing: 10,
                   children: [
                     BankCard(
-                      cardholderName: 'Mohamed Nasr',
-                      brandName: 'VISA',
-                      cardNumber: '**** 4242',
-                      expiry: '08/28',
+                      userName: 'Mohamed Nasr',
                       balance: walletCubit.balance!,
                     ),
                     const SizedBox(height: 7),
