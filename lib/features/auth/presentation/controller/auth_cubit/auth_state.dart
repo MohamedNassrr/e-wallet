@@ -18,14 +18,12 @@ class AuthFailureStates extends AuthStates {
   AuthFailureStates({required this.failure});
 }
 
-final class LockInitialStates extends AuthStates {}
+class SignOutLoadingStates extends AuthStates {}
 
-final class LockLoadingStates extends AuthStates {}
+class SignOutSuccessStates extends AuthStates {}
 
-final class LockUnlockedStates extends AuthStates {}
-
-final class LockFailureStates extends AuthStates {
+class SignOutFailureStates extends AuthStates {
   final String errMessage;
 
-  LockFailureStates(this.errMessage);
+  SignOutFailureStates(this.errMessage);
 }

@@ -50,6 +50,7 @@ abstract class AppRouting {
               create: (context) =>
                   LedgerCubit(getIt.get<LedgerRepoImpl>())..fetchLedger(),
             ),
+            BlocProvider(create: (context) => AuthCubit()),
             BlocProvider(
               create: (context) => TransactionCubit(
                 getIt.get<TransactionRepoImpl>(),
@@ -61,7 +62,6 @@ abstract class AppRouting {
           child: const HomeView(),
         ),
       ),
-
       GoRoute(
         path: rHistoryView,
         builder: (context, state) => BlocProvider(

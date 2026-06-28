@@ -1,3 +1,5 @@
+import 'package:e_wallet/core/services/biometric_service.dart';
+import 'package:e_wallet/core/services/service_locator.dart';
 import 'package:e_wallet/core/widgets/custom_form_field.dart';
 import 'package:e_wallet/features/home/presentation/controller/transaction_cubit/transaction_cubit.dart';
 import 'package:e_wallet/features/home/presentation/controller/transaction_cubit/transaction_state.dart';
@@ -46,7 +48,11 @@ class _DepositButtonState extends State<DepositButton> {
                       prefixIcon: Icons.payments_outlined,
                     ),
                     buttonText: l10n.continueButton,
-                    onTap: () {
+                    onTap: () async {
+                      final authenticated = await getIt<BiometricService>()
+                          .biometricAuth();
+
+                      if (!authenticated) return;
                       depositCubit.deposit(
                         amount: double.parse(
                           depositAmountController.text.trim(),

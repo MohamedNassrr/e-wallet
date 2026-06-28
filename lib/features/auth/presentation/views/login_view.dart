@@ -1,5 +1,3 @@
-import 'package:e_wallet/core/services/biometric_service.dart';
-import 'package:e_wallet/core/services/service_locator.dart';
 import 'package:e_wallet/core/themes/app_color.dart';
 import 'package:e_wallet/features/auth/presentation/controller/auth_cubit/auth_cubit.dart';
 import 'package:e_wallet/features/auth/presentation/views/widgets/login_view_body.dart';
@@ -15,7 +13,7 @@ class LoginView extends StatelessWidget {
       backgroundColor: AppColors.mainColor,
       body: SafeArea(
         child: BlocProvider(
-          create: (context) => AuthCubit(getIt.get<BiometricService>()),
+          create: (context) => AuthCubit(),
           child: const LoginViewBody(),
         ),
       ),

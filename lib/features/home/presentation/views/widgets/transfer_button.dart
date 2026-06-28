@@ -1,3 +1,5 @@
+import 'package:e_wallet/core/services/biometric_service.dart';
+import 'package:e_wallet/core/services/service_locator.dart';
 import 'package:e_wallet/core/widgets/custom_form_field.dart';
 import 'package:e_wallet/features/home/presentation/controller/transaction_cubit/transaction_cubit.dart';
 import 'package:e_wallet/features/home/presentation/controller/transaction_cubit/transaction_state.dart';
@@ -95,13 +97,19 @@ class _TransferButtonState extends State<TransferButton> {
                         prefixIcon: Icons.payments_outlined,
                       ),
                       buttonText: l10n.continueButton,
-                      onTap: () {
-                        if (formKey.currentState!.validate()) {
-                          transferCubit.transfer(
-                            receiverPhone: receiverController.text.trim(),
-                            amount: double.parse(amountController.text.trim()),
-                          );
-                        }
+                      onTap: () async {
+                        if (!formKey.currentState!.validate()) return;
+
+                        final authenticated = await getIt<BiometricService>()
+                            .biometricAuth();
+
+                        if (!authenticated) return;
+
+                        if (!context.mounted) return;
+                        context.read<TransactionCubit>().transfer(
+                          receiverPhone: receiverController.text.trim(),
+                          amount: double.parse(amountController.text.trim()),
+                        );
                       },
                       isLoading: state is TransferLoadingStates,
                     ),

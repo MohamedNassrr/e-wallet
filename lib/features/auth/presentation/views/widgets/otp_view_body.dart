@@ -1,3 +1,5 @@
+import 'package:e_wallet/core/services/biometric_service.dart';
+import 'package:e_wallet/core/services/service_locator.dart';
 import 'package:e_wallet/core/utils/app_routing.dart';
 import 'package:e_wallet/features/auth/presentation/controller/auth_cubit/auth_cubit.dart';
 import 'package:e_wallet/features/auth/presentation/controller/auth_cubit/auth_state.dart';
@@ -21,27 +23,16 @@ class OtpViewBody extends StatelessWidget {
       listener: (context, state) async {
         if (state is AuthSuccessStates) {
           await context.read<WalletCubit>().createWallet();
-          if (context.mounted) {
-            context.read<AuthCubit>().biometricAuth();
+
+          if (!context.mounted) return;
+
+          final authenticated = await getIt<BiometricService>().biometricAuth();
+
+          if (!context.mounted) return;
+
+          if (authenticated) {
+            GoRouter.of(context).go(AppRouting.rHomeView);
           }
-        }
-
-        if (state is LockUnlockedStates) {
-           if (!context.mounted) return;
-          GoRouter.of(context).go(AppRouting.rHomeView);
-        }
-
-        if (state is LockFailureStates) {
-          if (!context.mounted) return;
-          ScaffoldMessenger.of(
-            context,
-          ).showSnackBar(SnackBar(content: Text(l10n.biometricFailed)));
-        }
-        if (state is LockFailureStates) {
-          if (!context.mounted) return;
-          ScaffoldMessenger.of(
-            context,
-          ).showSnackBar(SnackBar(content: Text(l10n.biometricFailed)));
         }
       },
       builder: (context, state) {

@@ -118,7 +118,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                         hintText: '01XX XXX XXXX',
                       ),
                       CustomTextButton(
-                        isLoading: State is AuthLoadingStates ? true : false,
+                        isLoading: state is AuthLoadingStates ? true : false,
                         title: l10n.continueButton,
                         onPressed: () {
                           if (formKey.currentState!.validate()) {

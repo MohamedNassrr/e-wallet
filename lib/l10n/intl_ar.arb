@@ -1,0 +1,42 @@
+{
+  "enterPhoneNumber": "أدخل رقم هاتفك",
+  "continueButton": "متابعة",
+  "nextButton": "التالي",
+  "enterOtp": "أدخل الرمز المكون من 6 أرقام المرسل عبر الرسائل القصيرة",
+  "goodMorning": "صباح الخير!",
+  "transaction": "آخر المعاملات",
+  "seeAll": "عرض الكل",
+  "cardHolder": "حامل البطاقة",
+  "expires": "تاريخ الانتهاء",
+  "transfer": "تحويل",
+  "deposit": "إيداع",
+  "totalBalance": "إجمالي الرصيد",
+  "sendTo": "إرسال إلى",
+  "amount": "المبلغ",
+  "phoneValidation": "لا يمكن أن يكون رقم الهاتف فارغًا",
+  "phoneLengthValidation": "رقم الهاتف غير صحيح",
+  "amountValidation": "المبلغ غير صالح",
+  "noTransactionsYet": "لا توجد معاملات حتى الآن",
+  "featureForward": "أرسل واستقبل وأدر أموالك — كل ذلك في مكان واحد.",
+  "biometricFailed": "فشلت عملية التحقق. يرجى المحاولة مرة أخرى.",
+  "transactions": "المعاملات",
+
+  "displayName": "اسم العرض",
+  "setDisplayName": "قم بتعيين اسم العرض الخاص بك",
+
+  "preferences": "التفضيلات",
+
+  "darkMode": "الوضع الداكن",
+
+  "language": "اللغة",
+
+  "english": "الإنجليزية",
+  "arabic": "العربية",
+
+  "logOut": "تسجيل الخروج",
+  "signOutFromYourAccount": "تسجيل الخروج من حسابك",
+
+   "accountAndPreferences": "الحساب والتفضيلات",
+   "egp":"ج.م.",
+   "Received":"أستلم"
+}

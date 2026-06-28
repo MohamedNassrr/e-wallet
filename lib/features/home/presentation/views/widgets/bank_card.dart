@@ -4,11 +4,10 @@ import 'package:e_wallet/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class BankCard extends StatelessWidget {
-  final String userName;
 
   final double balance;
 
-  const BankCard({super.key, required this.userName, required this.balance});
+  const BankCard({super.key,  required this.balance});
 
   @override
   Widget build(BuildContext context) {
@@ -22,34 +21,17 @@ class BankCard extends StatelessWidget {
               crossAxisAlignment: .start,
               children: [
                 Text(
-                  l10n.goodMorning,
-                  style: const TextStyle(
-                    color: Color(0xFF9E9E9E),
-                    fontSize: 13,
-                    fontWeight: FontWeight.w500,
-                    letterSpacing: 0.4,
-                  ),
-                ),
-                Text(
-                  userName,
-                  style: const TextStyle(
-                    color: Color(0xFF1A1A2E),
-                    fontSize: 18,
-                    fontWeight: FontWeight.w800,
-                    letterSpacing: -0.5,
-                  ),
+                  '${l10n.goodMorning} 👋',
+                  style: Theme.of(context).textTheme.displaySmall,
                 ),
               ],
             ),
             const Spacer(),
             CustomIconButton(
               backGroundColor: AppColors.grey400,
-              onPressed: () {},
-              icon: Icons.notifications_none_rounded,
-            ),
-            CustomIconButton(
-              backGroundColor: AppColors.grey400,
-              onPressed: () {},
+              onPressed: () {
+                Scaffold.of(context).openEndDrawer();
+              },
               icon: Icons.settings,
             ),
           ],
@@ -73,25 +55,14 @@ class BankCard extends StatelessWidget {
               boxShadow: [
                 BoxShadow(
                   color: const Color(0xFF0F3460).withValues(alpha: 0.5),
-                  blurRadius: 24,
-                  offset: const Offset(0, 12),
+                  blurRadius: 20,
+
+                  offset: const Offset(0, 11),
                 ),
               ],
             ),
             child: Stack(
               children: [
-                Positioned(
-                  top: -40,
-                  right: -40,
-                  child: Container(
-                    width: 160,
-                    height: 160,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.white.withValues(alpha: 0.04),
-                    ),
-                  ),
-                ),
                 Positioned(
                   bottom: -60,
                   left: -20,
@@ -116,7 +87,7 @@ class BankCard extends StatelessWidget {
                             .copyWith(color: AppColors.white),
                       ),
                       Text(
-                        'EGP ${balance.toStringAsFixed(2)}',
+                        '${l10n.egp} ${balance.toStringAsFixed(2)}',
                         style: Theme.of(
                           context,
                         ).textTheme.displayLarge!.copyWith(color: Colors.white),

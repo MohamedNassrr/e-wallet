@@ -19,5 +19,24 @@
   "noTransactionsYet": "No transactions yet",
   "featureForward": "Send, receive, and manage your money — all in one place.",
   "biometricFailed": "Authentication failed. Please try again.",
-  "transactions": "Transactions"
+  "transactions": "Transactions",
+
+  "displayName": "Display Name",
+  "setDisplayName": "Set your display name",
+
+  "preferences": "Preferences",
+  "darkMode": "Dark Mode",
+
+  "language": "Language",
+  "english": "English",
+  "arabic": "Arabic",
+
+  "logOut": "Log Out",
+  "signOutFromYourAccount": "Sign out from your account",
+
+   "accountAndPreferences": "Account & Preferences",
+   "egp":"EGP",
+   "Received":"Received"
+ 
+
 }
