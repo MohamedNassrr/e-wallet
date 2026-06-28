@@ -1,3 +1,5 @@
+import 'package:e_wallet/core/services/biometric_service.dart';
+import 'package:e_wallet/core/services/service_locator.dart';
 import 'package:e_wallet/core/utils/app_routing.dart';
 import 'package:e_wallet/features/auth/presentation/controller/auth_cubit/auth_cubit.dart';
 import 'package:e_wallet/features/auth/presentation/controller/auth_cubit/auth_state.dart';
@@ -21,7 +23,16 @@ class OtpViewBody extends StatelessWidget {
       listener: (context, state) async {
         if (state is AuthSuccessStates) {
           await context.read<WalletCubit>().createWallet();
-          if (context.mounted) GoRouter.of(context).go(AppRouting.rHomeView);
+
+          if (!context.mounted) return;
+
+          final authenticated = await getIt<BiometricService>().biometricAuth();
+
+          if (!context.mounted) return;
+
+          if (authenticated) {
+            GoRouter.of(context).go(AppRouting.rHomeView);
+          }
         }
       },
       builder: (context, state) {

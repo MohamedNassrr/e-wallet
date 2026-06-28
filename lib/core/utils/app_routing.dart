@@ -7,9 +7,8 @@ import 'package:e_wallet/features/home/data/repos/ledger_repo/ledger_repo_impl.d
 import 'package:e_wallet/features/home/data/repos/transaction_repo/transaction_repo_impl.dart';
 import 'package:e_wallet/features/home/data/repos/wallet_repo.dart';
 import 'package:e_wallet/features/home/data/services/paymob_service.dart';
-import 'package:e_wallet/features/home/presentation/controller/deposit_cubit/deposit_cubit.dart';
 import 'package:e_wallet/features/home/presentation/controller/ledger_cubit/ledger_cubit.dart';
-import 'package:e_wallet/features/home/presentation/controller/transfer_cubit/transfer_cubit.dart';
+import 'package:e_wallet/features/home/presentation/controller/transaction_cubit/transaction_cubit.dart';
 import 'package:e_wallet/features/home/presentation/controller/wallet_cubit/wallet_cubit.dart';
 import 'package:e_wallet/features/home/presentation/views/history_view.dart';
 import 'package:e_wallet/features/home/presentation/views/home_view.dart';
@@ -51,12 +50,10 @@ abstract class AppRouting {
               create: (context) =>
                   LedgerCubit(getIt.get<LedgerRepoImpl>())..fetchLedger(),
             ),
+            BlocProvider(create: (context) => AuthCubit()),
             BlocProvider(
-              create: (context) =>
-                  TransactionCubit(getIt.get<TransactionRepoImpl>()),
-            ),
-            BlocProvider(
-              create: (context) => DepositCubit(
+              create: (context) => TransactionCubit(
+                getIt.get<TransactionRepoImpl>(),
                 getIt.get<DepositRepoImpl>(),
                 getIt.get<PaymobService>(),
               ),
@@ -65,7 +62,6 @@ abstract class AppRouting {
           child: const HomeView(),
         ),
       ),
-
       GoRoute(
         path: rHistoryView,
         builder: (context, state) => BlocProvider(

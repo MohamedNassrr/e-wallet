@@ -84,11 +84,11 @@ class S {
     );
   }
 
-  /// `Total Balance`
-  String get totalBalance {
+  /// `Good Morning!`
+  String get goodMorning {
     return Intl.message(
-      'Total Balance',
-      name: 'totalBalance',
+      'Good Morning!',
+      name: 'goodMorning',
       desc: '',
       args: [],
     );
@@ -127,6 +127,16 @@ class S {
   /// `Deposit`
   String get deposit {
     return Intl.message('Deposit', name: 'deposit', desc: '', args: []);
+  }
+
+  /// `Total Balance`
+  String get totalBalance {
+    return Intl.message(
+      'Total Balance',
+      name: 'totalBalance',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Send to`
@@ -179,6 +189,26 @@ class S {
     );
   }
 
+  /// `Send, receive, and manage your money — all in one place.`
+  String get featureForward {
+    return Intl.message(
+      'Send, receive, and manage your money — all in one place.',
+      name: 'featureForward',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Authentication failed. Please try again.`
+  String get biometricFailed {
+    return Intl.message(
+      'Authentication failed. Please try again.',
+      name: 'biometricFailed',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Transactions`
   String get transactions {
     return Intl.message(
@@ -188,13 +218,96 @@ class S {
       args: [],
     );
   }
+
+  /// `Display Name`
+  String get displayName {
+    return Intl.message(
+      'Display Name',
+      name: 'displayName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Set your display name`
+  String get setDisplayName {
+    return Intl.message(
+      'Set your display name',
+      name: 'setDisplayName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Preferences`
+  String get preferences {
+    return Intl.message('Preferences', name: 'preferences', desc: '', args: []);
+  }
+
+  /// `Dark Mode`
+  String get darkMode {
+    return Intl.message('Dark Mode', name: 'darkMode', desc: '', args: []);
+  }
+
+  /// `Language`
+  String get language {
+    return Intl.message('Language', name: 'language', desc: '', args: []);
+  }
+
+  /// `English`
+  String get english {
+    return Intl.message('English', name: 'english', desc: '', args: []);
+  }
+
+  /// `Arabic`
+  String get arabic {
+    return Intl.message('Arabic', name: 'arabic', desc: '', args: []);
+  }
+
+  /// `Log Out`
+  String get logOut {
+    return Intl.message('Log Out', name: 'logOut', desc: '', args: []);
+  }
+
+  /// `Sign out from your account`
+  String get signOutFromYourAccount {
+    return Intl.message(
+      'Sign out from your account',
+      name: 'signOutFromYourAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Account & Preferences`
+  String get accountAndPreferences {
+    return Intl.message(
+      'Account & Preferences',
+      name: 'accountAndPreferences',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `EGP`
+  String get egp {
+    return Intl.message('EGP', name: 'egp', desc: '', args: []);
+  }
+
+  /// `Received`
+  String get Received {
+    return Intl.message('Received', name: 'Received', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   const AppLocalizationDelegate();
 
   List<Locale> get supportedLocales {
-    return const <Locale>[Locale.fromSubtags(languageCode: 'en')];
+    return const <Locale>[
+      Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'ar'),
+    ];
   }
 
   @override

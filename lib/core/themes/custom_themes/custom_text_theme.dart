@@ -83,4 +83,98 @@ class CustomTextTheme {
       height: 1.5,
     ),
   );
+
+  static TextTheme lightDarkTheme = TextTheme(
+    // Headings - Extra Bold
+    displayLarge: TextStyle(
+      fontSize: 32.sp,
+      fontWeight: FontWeight.w800, // Extra Bold
+      height: 1.5,
+      color: AppColors.white,
+    ),
+    displayMedium: TextStyle(
+      fontSize: 28.sp,
+      fontWeight: FontWeight.w800,
+      height: 1.5,
+      color: AppColors.white,
+    ),
+    displaySmall: TextStyle(
+      fontSize: 24.sp,
+      fontWeight: FontWeight.w800,
+      height: 1.5,
+      color: AppColors.white,
+    ),
+    headlineMedium: TextStyle(
+      fontSize: 20.sp,
+      fontWeight: FontWeight.w800,
+      height: 1.5,
+      color: AppColors.white,
+    ),
+    headlineSmall: TextStyle(
+      fontSize: 18.sp,
+      fontWeight: FontWeight.w700, // Bold
+      height: 1.5,
+      color: AppColors.white,
+    ),
+
+    // Body - Semibold
+    bodyLarge: TextStyle(
+      fontSize: 16.sp,
+      fontWeight: FontWeight.w600, // Semibold
+      height: 1.5,
+      color: AppColors.white,
+    ),
+    bodyMedium: TextStyle(
+      fontSize: 14.sp,
+      fontWeight: FontWeight.w600,
+      height: 1.5,
+      color: AppColors.white,
+    ),
+    bodySmall: TextStyle(
+      fontSize: 12.sp,
+      fontWeight: FontWeight.w600,
+      height: 1.5,
+      color: AppColors.white,
+    ),
+
+    // Labels - Medium
+    labelLarge: TextStyle(
+      fontSize: 16.sp,
+      fontWeight: FontWeight.w500, // Medium
+      height: 1.5,
+      color: AppColors.white,
+    ),
+    labelMedium: TextStyle(
+      fontSize: 14.sp,
+      fontWeight: FontWeight.w500,
+      height: 1.5,
+      color: AppColors.white,
+    ),
+    labelSmall: TextStyle(
+      fontSize: 12.sp,
+      fontWeight: FontWeight.w500,
+      height: 1.5,
+      color: AppColors.white,
+    ),
+
+    // Title - Regular
+    titleLarge: TextStyle(
+      fontSize: 16.sp,
+      fontWeight: FontWeight.w400, // Regular
+      height: 1.5,
+      color: AppColors.white,
+    ),
+    titleMedium: TextStyle(
+      fontSize: 14.sp,
+      fontWeight: FontWeight.w400,
+      height: 1.5,
+      color: AppColors.white,
+    ),
+    titleSmall: TextStyle(
+      fontSize: 12.sp,
+      fontWeight: FontWeight.w400,
+      height: 1.5,
+      color: AppColors.white,
+    ),
+  );
 }

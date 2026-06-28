@@ -84,4 +84,15 @@ class AuthCubit extends Cubit<AuthStates> {
       await userRef.set(userModel.toMap(), SetOptions(merge: true));
     }
   }
+
+  Future<void> signOut() async {
+    emit(SignOutLoadingStates());
+    try {
+      await _auth.signOut();
+      emit(SignOutSuccessStates());
+    } catch (e) {
+      log('failure in singout: ${e.toString()}');
+      emit(SignOutFailureStates(e.toString()));
+    }
+  }
 }

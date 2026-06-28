@@ -40,16 +40,12 @@ class HomeViewBody extends StatelessWidget {
             if (state is FetchWalletSuccessStates) {
               var walletCubit = state.walletModel;
               return Padding(
-                padding: const EdgeInsets.only(left: 27, right: 27, top: 27),
+                padding: const EdgeInsets.only(left: 27, right: 27, top: 18),
                 child: Column(
                   crossAxisAlignment: .center,
                   spacing: 10,
                   children: [
                     BankCard(
-                      cardholderName: 'Mohamed Nasr',
-                      brandName: 'VISA',
-                      cardNumber: '**** 4242',
-                      expiry: '08/28',
                       balance: walletCubit.balance!,
                     ),
                     const SizedBox(height: 7),
@@ -81,11 +77,12 @@ class HomeViewBody extends StatelessWidget {
                           return ListView.separated(
                             shrinkWrap: true,
                             physics: const NeverScrollableScrollPhysics(),
-                            itemCount: state.ledgerModel.length.clamp(0, 4),
+                            itemCount: state.ledgerModel.length.clamp(0, 5),
                             separatorBuilder: (context, index) =>
                                 const SizedBox(height: 10),
                             itemBuilder: (context, index) {
                               return RecentTransactionListBody(
+                                
                                 ledgerModel: state.ledgerModel[index],
                               );
                             },

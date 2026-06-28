@@ -1,3 +1,4 @@
+import 'package:e_wallet/core/themes/app_color.dart';
 import 'package:flutter/material.dart';
 
 class CustomFormField extends StatelessWidget {
@@ -28,13 +29,13 @@ class CustomFormField extends StatelessWidget {
       decoration: InputDecoration(
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(color: Colors.grey),
+          borderSide: const BorderSide(color: AppColors.grey400),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(color: Colors.grey),
+          borderSide: const BorderSide(color: AppColors.grey400),
         ),
-        prefixIcon: Icon(prefixIcon, color: Colors.grey[600]),
+        prefixIcon: Icon(prefixIcon, color: AppColors.grey400),
         hintText: hintText,
       ),
     );

@@ -1,21 +1,42 @@
 {
-    "enterPhoneNumber": "Enter Your Phone number",
-    "continueButton": "Continue",
-    "nextButton": "Next",
-    "enterOtp": "Enter 6-digit code sent via SMS",
-    "totalBalance":"Total Balance",
-    "transaction":"Recent Transaction",
-    "seeAll":"See All",
-    "cardHolder": "CARD HOLDER",
-    "expires": "EXPIRES",
-    "transfer": "Transfer",
-    "deposit": "Deposit",
-    "sendTo":"Send to",
-    "amount":"amount",
-    "phoneValidation":"phone number can not be empty!",
-    "phoneLengthValidation":"phone number is wrong",
-    "amountValidation":"Invalid amount",
-    "noTransactionsYet":"No transactions yet",
-    "transactions":"Transactions"
-    
+  "enterPhoneNumber": "Enter Your Phone number",
+  "continueButton": "Continue",
+  "nextButton": "Next",
+  "enterOtp": "Enter 6-digit code sent via SMS",
+  "goodMorning": "Good Morning!",
+  "transaction": "Recent Transaction",
+  "seeAll": "See All",
+  "cardHolder": "CARD HOLDER",
+  "expires": "EXPIRES",
+  "transfer": "Transfer",
+  "deposit": "Deposit",
+  "totalBalance": "Total Balance",
+  "sendTo": "Send to",
+  "amount": "amount",
+  "phoneValidation": "phone number can not be empty!",
+  "phoneLengthValidation": "phone number is wrong",
+  "amountValidation": "Invalid amount",
+  "noTransactionsYet": "No transactions yet",
+  "featureForward": "Send, receive, and manage your money — all in one place.",
+  "biometricFailed": "Authentication failed. Please try again.",
+  "transactions": "Transactions",
+
+  "displayName": "Display Name",
+  "setDisplayName": "Set your display name",
+
+  "preferences": "Preferences",
+  "darkMode": "Dark Mode",
+
+  "language": "Language",
+  "english": "English",
+  "arabic": "Arabic",
+
+  "logOut": "Log Out",
+  "signOutFromYourAccount": "Sign out from your account",
+
+   "accountAndPreferences": "Account & Preferences",
+   "egp":"EGP",
+   "Received":"Received"
+ 
+
 }

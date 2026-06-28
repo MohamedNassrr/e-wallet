@@ -8,5 +8,8 @@ class AppTheme {
     scaffoldBackgroundColor: const Color(0xffF3F3F3),
     appBarTheme: const AppBarTheme(backgroundColor: Color(0xffF3F3F3)),
   );
-  static ThemeData darkTheme = ThemeData(brightness: Brightness.dark);
+  static ThemeData darkTheme = ThemeData(
+    brightness: Brightness.dark,
+    textTheme: CustomTextTheme.lightDarkTheme,
+  );
 }

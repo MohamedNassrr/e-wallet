@@ -1,4 +1,5 @@
-import 'package:e_wallet/core/failures/local_auth_failure.dart';
+import 'dart:developer';
+
 import 'package:local_auth/local_auth.dart';
 
 class BiometricService {
@@ -8,16 +9,22 @@ class BiometricService {
     return await auth.canCheckBiometrics;
   }
 
-  Future<dynamic> biometricAuth() async {
+  Future<bool> biometricAuth() async {
     try {
-      return await auth.authenticate(
+      final result = await auth.authenticate(
         localizedReason: 'Confirm it\'s you to continue',
         biometricOnly: false,
       );
+
+      log('Biometric result: $result');
+
+      return result;
     } on LocalAuthException catch (e) {
-      return BiometricFailureMapper.map(e);
-    } catch (_) {
-      return const BiometricFailure("Something went wrong. Try again.");
+      log(e.toString());
+      return false;
+    } catch (e) {
+      log(e.toString());
+      return false;
     }
   }
 }

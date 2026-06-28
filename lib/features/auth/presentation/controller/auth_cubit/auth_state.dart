@@ -17,3 +17,13 @@ class AuthFailureStates extends AuthStates {
 
   AuthFailureStates({required this.failure});
 }
+
+class SignOutLoadingStates extends AuthStates {}
+
+class SignOutSuccessStates extends AuthStates {}
+
+class SignOutFailureStates extends AuthStates {
+  final String errMessage;
+
+  SignOutFailureStates(this.errMessage);
+}
