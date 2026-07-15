@@ -1,5 +1,6 @@
 import 'package:e_wallet/core/services/biometric_service.dart';
 import 'package:e_wallet/core/services/service_locator.dart';
+import 'package:e_wallet/core/utils/app_routing.dart';
 import 'package:e_wallet/core/widgets/custom_form_field.dart';
 import 'package:e_wallet/features/home/presentation/controller/transaction_cubit/transaction_cubit.dart';
 import 'package:e_wallet/features/home/presentation/controller/transaction_cubit/transaction_state.dart';
@@ -46,6 +47,11 @@ class _TransferButtonState extends State<TransferButton> {
               value: transferCubit,
               child: BlocConsumer<TransactionCubit, TransactionStates>(
                 listener: (context, state) {
+                  if (state is TransferSuccessStates) {
+                    GoRouter.of(
+                      context,
+                    ).pushReplacement(AppRouting.rSuccessTransferView);
+                  }
                   if (state is TransferFailureStates) {
                     SnackBar snackBar = SnackBar(
                       content: Text(state.errMessage.toString()),

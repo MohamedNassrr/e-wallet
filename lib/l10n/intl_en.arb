@@ -36,7 +36,9 @@
 
    "accountAndPreferences": "Account & Preferences",
    "egp":"EGP",
-   "Received":"Received"
- 
+   "Received":"Received",
+
+  "transactionSuccessful": "Your Transaction is Successful",
+  "thankYou": "Thank You!"
 
 }

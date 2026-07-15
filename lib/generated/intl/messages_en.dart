@@ -71,8 +71,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "signOutFromYourAccount": MessageLookupByLibrary.simpleMessage(
       "Sign out from your account",
     ),
+    "thankYou": MessageLookupByLibrary.simpleMessage("Thank You!"),
     "totalBalance": MessageLookupByLibrary.simpleMessage("Total Balance"),
     "transaction": MessageLookupByLibrary.simpleMessage("Recent Transaction"),
+    "transactionSuccessful": MessageLookupByLibrary.simpleMessage(
+      "Your Transaction is Successful",
+    ),
     "transactions": MessageLookupByLibrary.simpleMessage("Transactions"),
     "transfer": MessageLookupByLibrary.simpleMessage("Transfer"),
   };

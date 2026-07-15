@@ -298,6 +298,21 @@ class S {
   String get Received {
     return Intl.message('Received', name: 'Received', desc: '', args: []);
   }
+
+  /// `Your Transaction is Successful`
+  String get transactionSuccessful {
+    return Intl.message(
+      'Your Transaction is Successful',
+      name: 'transactionSuccessful',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Thank You!`
+  String get thankYou {
+    return Intl.message('Thank You!', name: 'thankYou', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

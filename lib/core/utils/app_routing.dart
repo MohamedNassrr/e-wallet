@@ -12,6 +12,7 @@ import 'package:e_wallet/features/home/presentation/controller/transaction_cubit
 import 'package:e_wallet/features/home/presentation/controller/wallet_cubit/wallet_cubit.dart';
 import 'package:e_wallet/features/home/presentation/views/history_view.dart';
 import 'package:e_wallet/features/home/presentation/views/home_view.dart';
+import 'package:e_wallet/features/home/presentation/views/success_transfer_view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -21,6 +22,7 @@ abstract class AppRouting {
   static const rOtpView = '/OtpView';
   static const rHomeView = '/HomeView';
   static const rHistoryView = '/HistoryView';
+  static const rSuccessTransferView = '/SuccessTransferView';
 
   static final router = GoRouter(
     initialLocation: initialLocation(),
@@ -69,6 +71,10 @@ abstract class AppRouting {
               LedgerCubit(getIt.get<LedgerRepoImpl>())..fetchLedger(),
           child: const HistoryView(),
         ),
+      ),
+      GoRoute(
+        path: rSuccessTransferView,
+        builder: (context, state) => const SuccessTransferView(),
       ),
     ],
   );
