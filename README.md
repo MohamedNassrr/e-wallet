@@ -8,6 +8,13 @@ E-Wallet is a fintech mobile application that allows users to securely transfer 
 
 The application focuses on transaction reliability and consistency by using Firestore atomic transactions and idempotency protection to prevent duplicate operations.
 
+## 🎥 Demo Video
+
+
+https://github.com/user-attachments/assets/65360560-5fb7-4f36-a5da-e66594e3ddd7
+
+
+
 ## ✨ Features
 
 - 📱 Phone Authentication with OTP verification
