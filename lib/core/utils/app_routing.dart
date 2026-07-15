@@ -25,7 +25,7 @@ abstract class AppRouting {
   static const rSuccessTransferView = '/SuccessTransferView';
 
   static final router = GoRouter(
-    initialLocation: initialLocation(),
+    // initialLocation: initialLocation(),
     routes: [
       GoRoute(path: rLoginView, builder: (context, state) => const LoginView()),
       GoRoute(
